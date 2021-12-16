@@ -1,2 +1,2 @@
 all:
-	gcc consumer.c -o consumer
+	gcc consumer.c -g -o consumer

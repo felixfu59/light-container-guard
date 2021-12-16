@@ -1,0 +1,11 @@
+---
+rules:
+  - name: Privileged pod created
+    description: A privileged pod was created in k8s, it's unexpected
+    condition: k_event.pod.privileged == 0
+    priority: 2
+
+  - name: Mount sensitive dirs
+    description: A pod mount a sensitive dirs
+    condition: string.find(k_event.pod.mount,"/etc") ~= nil
+    priority: 2
